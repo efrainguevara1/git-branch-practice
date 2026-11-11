@@ -1,6 +1,6 @@
 [run]
 source = event_tickets, core
-omit =
+omit = 
     */migrations/*
     manage.py
     */asgi.py
