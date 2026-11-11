@@ -7,7 +7,6 @@ In this example we turn our attention to **testing** — one of the most importa
 ## Why Testing Matters
 
 When you write code and manually check "does this work?" in a browser or Postman, you're testing — just not in a way anyone else (or future-you) can repeat. Automated tests solve that problem.
-
 Here's what tests give you:
 
 **Confidence when changing code.** When you refactor a serializer or add a new field to a model, your tests tell you immediately if something broke — before you push to GitHub, before a teammate reviews it, before a user sees it.
