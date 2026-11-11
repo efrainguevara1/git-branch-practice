@@ -111,3 +111,16 @@ class EventTicketsTestCase(APITestCase):
             response.data["tickets"][0]["tier"]["name"], "General Admission"
         )
         self.assertIn("total_price", response.data)
+    def test_create_order_requires_authentication(self):
+        payload = {
+            'items' : [
+                {
+                    'event_id': self.event.id,
+                    'ticket_tier_id': self.tier.id,
+                    'quantity': 1
+                }
+            ]
+        }
+        response = self.client.post('/api/v1/orders/', payload, format='json')
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(Order.objects.count(), 0)
